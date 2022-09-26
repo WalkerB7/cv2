@@ -1,5 +1,7 @@
+import models.Car;
 import models.ExampleClass2;
 import models.MyMathClass;
+import models.Vehicle;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,5 +17,8 @@ public class Main {
         int resultSum = MyMathClass.sum(10,20);
 
         ExampleClass2.InnerClass innerClass = new ExampleClass2.InnerClass();
+
+        //Vehicle skoda = new Vehicle("Škoda");
+        Car skodaFabia = new Car("Škoda", "Fabia");
     }
 }
