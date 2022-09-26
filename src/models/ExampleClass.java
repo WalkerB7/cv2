@@ -5,11 +5,11 @@ public class ExampleClass {
     protected int protectedNumber = 20;
     private int privateNumber = 30;
 
-    public void publicMethod(){
+    public void publicMethod() {
 
     }
 
-    protected void protectedMethod(){
+    protected void protectedMethod() {
 
     }
 

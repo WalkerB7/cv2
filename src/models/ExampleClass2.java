@@ -8,4 +8,9 @@ public class ExampleClass2 extends ExampleClass{
         protectedMethod();
         int y = protectedNumber;
     }
+
+    public static class InnerClass{
+
+    }
+
 }

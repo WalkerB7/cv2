@@ -11,5 +11,9 @@ public class Main {
         ExampleClass2 exampleClass2 = new ExampleClass2();
 
         System.out.println(MyMathClass.pi);
+
+        int resultSum = MyMathClass.sum(10,20);
+
+        ExampleClass2.InnerClass innerClass = new ExampleClass2.InnerClass();
     }
 }
