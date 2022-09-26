@@ -1,7 +1,7 @@
-import models.Car;
-import models.ExampleClass2;
-import models.MyMathClass;
-import models.Vehicle;
+import models.*;
+import models.dataSaver.DataSaver;
+import models.dataSaver.FileDataSaver;
+import models.dataSaver.InMemoryDataSaver;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,5 +20,40 @@ public class Main {
 
         //Vehicle skoda = new Vehicle("Škoda");
         Car skodaFabia = new Car("Škoda", "Fabia");
+
+        Box<Car> boxOfCar = new Box<>(skodaFabia);
+
+        Box<String> boxOfString = new Box<>("Hello");
+        Box<Integer> boxOfInteger = new Box<>(20);
+
+        Car car2 = boxOfCar.getData();
+
+        Pair<Integer, Car> pairOfCar = new Pair<>(1, skodaFabia);
+
+        Pair<String, String> pairOfString = new Pair<>("key", "val");
+
+        Box<Pair<Integer, Car>> boxOfPair = new Box<>(pairOfCar);
+
+        DataSaver<String> dataSaver;
+        if(true){
+            dataSaver = new FileDataSaver<>();
+        } else{
+            dataSaver = new InMemoryDataSaver<>();
+        }
+
+        dataSaver.save("My text");
+        System.out.println(dataSaver.load());
+
+        try {
+            dataSaver.save("My text");
+        }
+        catch (NullPointerException e){
+            System.out.println("Nepodařilo se uložit");
+        }
+        catch (Exception e){
+            dataSaver = new InMemoryDataSaver<>();
+            dataSaver.save("My text");
+            System.out.println("Nepodařilo se uložit");
+        }
     }
 }
